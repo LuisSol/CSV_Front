@@ -1,0 +1,32 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders app without crashing 1`] = `
+<div>
+  <main
+    class="sc-bdvvaa"
+  >
+    <h1
+      class="sc-gsDJrp"
+    >
+      CSV Uploader
+    </h1>
+    <section
+      class="sc-dkPtyc"
+    >
+      <input
+        class="sc-hKwCoD"
+        type="file"
+      />
+      <input
+        class="sc-eCImvq"
+        type="text"
+      />
+      <button
+        class="sc-jRQAMF"
+      >
+        upload
+      </button>
+    </section>
+  </main>
+</div>
+`;
