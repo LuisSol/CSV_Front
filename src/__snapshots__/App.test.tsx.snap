@@ -24,7 +24,7 @@ exports[`renders app without crashing 1`] = `
       <button
         class="sc-jRQAMF"
       >
-        upload
+        upload file
       </button>
     </section>
   </main>

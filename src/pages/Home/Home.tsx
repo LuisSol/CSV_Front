@@ -20,7 +20,7 @@ const Home = () => {
       <UploaderWrapper>
         <FileSelector type="file" />
         <ProviderTextInput type="text" />
-        <UploadBtn onClick={uploadCSV}>upload</UploadBtn>
+        <UploadBtn onClick={uploadCSV}>upload file</UploadBtn>
       </UploaderWrapper>
     </Container>
   );
