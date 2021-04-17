@@ -3,7 +3,7 @@
 exports[`renders app without crashing 1`] = `
 <div>
   <main
-    class="sc-bdvvaa"
+    class="sc-bdvvaa ghcGOY"
   >
     <h1
       class="sc-gsDJrp"
@@ -11,18 +11,44 @@ exports[`renders app without crashing 1`] = `
       CSV Uploader
     </h1>
     <section
-      class="sc-dkPtyc"
+      class="sc-dkPtyc gtoKWL"
     >
+      <label
+        class="sc-iCfLBT iRFvGT"
+      >
+        <p>
+          select a csv file:
+        </p>
+        <input
+          accept=".csv"
+          class="sc-hKwCoD kVCDjn"
+          id="file-input"
+          type="file"
+        />
+        <div
+          class="sc-furvIG ikamwt"
+        >
+          <svg>
+            csv-file.svg
+          </svg>
+        </div>
+        <strong />
+      </label>
+      <label
+        class="sc-eCImvq bWMDWn"
+        for="provider-text"
+      >
+        Provider:
+      </label>
       <input
-        class="sc-hKwCoD"
-        type="file"
-      />
-      <input
-        class="sc-eCImvq"
+        class="sc-jRQAMF erOQLW"
+        id="provider-text"
         type="text"
+        value=""
       />
       <button
-        class="sc-jRQAMF"
+        class="sc-gKckTs hrWobv"
+        disabled=""
       >
         upload file
       </button>
