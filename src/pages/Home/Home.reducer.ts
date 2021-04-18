@@ -7,6 +7,9 @@ type Action =
   | {
       type: "SET_PROVIDER";
       provider: string;
+    }
+  | {
+      type: "CLEAR_FORM";
     };
 
 type State = {
@@ -30,6 +33,8 @@ export const homeReducer = (
       return { ...state, file: action.file, filename: action.filename };
     case "SET_PROVIDER":
       return { ...state, provider: action.provider };
+    case "CLEAR_FORM":
+      return { ...homeDefaultState };
     default:
       return state;
   }

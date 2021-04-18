@@ -1,6 +1,16 @@
 import axios from "../../utils/api";
 
-export const uploadCSV = async () => {
-  const result = await axios.post("/upload-cvs");
+interface UploadMutation {
+  file: File;
+  provider: string;
+}
+
+export const uploadCSV = async ({ file, provider }: UploadMutation) => {
+  const formData = new FormData();
+
+  formData.append("file", file);
+  formData.append("provider", provider);
+
+  const result = await axios.post("/upload-cvs", formData);
   return result.data;
 };

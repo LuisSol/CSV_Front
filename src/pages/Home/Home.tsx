@@ -1,4 +1,5 @@
 import React, { useReducer } from "react";
+import { useMutation } from "react-query";
 
 // styles
 import {
@@ -16,15 +17,28 @@ import {
 // utils
 import { uploadCSV } from "./Home.utils";
 import { homeDefaultState, homeReducer } from "./Home.reducer";
+import { flasher } from "../../utils/Flasher";
 
 // icons
 import { ReactComponent as CSVFileIcon } from "../../assets/csv-file.svg";
+
+// components
+import Spinner from "../../components/ui/Spinner";
 
 const Home = () => {
   const [{ file, filename, provider }, dispatcher] = useReducer(
     homeReducer,
     homeDefaultState
   );
+  const { mutate, isLoading } = useMutation(uploadCSV, {
+    onError: () => {
+      flasher("Something went wrong please try again", "error");
+    },
+    onSuccess: () => {
+      dispatcher({ type: "CLEAR_FORM" });
+      flasher("File successful uploaded", "success");
+    },
+  });
 
   const handleFileSelection = async (
     e: React.ChangeEvent<HTMLInputElement>
@@ -43,6 +57,12 @@ const Home = () => {
   const handleProvider = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { value } = e.target;
     dispatcher({ type: "SET_PROVIDER", provider: value });
+  };
+
+  const uploadFile = () => {
+    if (file) {
+      mutate({ file, provider });
+    }
   };
 
   return (
@@ -69,10 +89,13 @@ const Home = () => {
           onChange={handleProvider}
           value={provider}
         />
-
-        <UploadBtn onClick={uploadCSV} disabled={!file || !provider}>
-          upload file
-        </UploadBtn>
+        {isLoading ? (
+          <Spinner />
+        ) : (
+          <UploadBtn onClick={uploadFile} disabled={!file || !provider}>
+            upload file
+          </UploadBtn>
+        )}
       </UploaderWrapper>
     </Container>
   );
