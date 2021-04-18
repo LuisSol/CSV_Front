@@ -26,6 +26,7 @@ const Providers = () => {
         providers.map(
           (provider: { name: string; vehicles: string[]; _id: string }) => (
             <ProviderRow
+              key={provider._id}
               name={provider.name}
               vehicles={provider.vehicles.length}
               id={provider._id}

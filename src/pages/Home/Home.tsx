@@ -1,4 +1,4 @@
-import React, { useReducer } from "react";
+import React, { useReducer, useRef } from "react";
 import { useMutation } from "react-query";
 
 // styles
@@ -26,6 +26,7 @@ import { ReactComponent as CSVFileIcon } from "../../assets/csv-file.svg";
 import Spinner from "../../components/ui/Spinner";
 
 const Home = () => {
+  const fileRef = useRef<HTMLInputElement | null>(null);
   const [{ file, filename, provider }, dispatcher] = useReducer(
     homeReducer,
     homeDefaultState
@@ -36,6 +37,9 @@ const Home = () => {
     },
     onSuccess: () => {
       dispatcher({ type: "CLEAR_FORM" });
+      if (fileRef.current) {
+        fileRef.current.value = "";
+      }
       flasher("File successful uploaded", "success");
     },
   });
@@ -76,6 +80,7 @@ const Home = () => {
             type="file"
             accept=".csv"
             onChange={handleFileSelection}
+            ref={fileRef}
           />
           <IconWrapper>
             <CSVFileIcon />

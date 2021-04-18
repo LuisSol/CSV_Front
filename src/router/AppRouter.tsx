@@ -8,6 +8,7 @@ import NavBar from "../components/NavBar";
 //pages
 import Home from "../pages/Home";
 import Providers from "../pages/Providers";
+import Provider from "../pages/Provider";
 
 // utils
 import url from "./url";
@@ -19,6 +20,7 @@ const AppRouter = () => {
       <Switch>
         <PublicRoute path={url.home} exact component={Home} />
         <PublicRoute path={url.providers} exact component={Providers} />
+        <PublicRoute path={url.providerVehicles} exact component={Provider} />
       </Switch>
     </Router>
   );
