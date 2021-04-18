@@ -2,31 +2,46 @@
 
 exports[`renders app without crashing 1`] = `
 <div>
+  <nav
+    class="sc-bdvvaa bZczUo"
+  >
+    <div
+      class="sc-dkPtyc dzGntM"
+    >
+      Home
+    </div>
+    |
+    <div
+      class="sc-gsDJrp jKctoZ"
+    >
+      Providers
+    </div>
+  </nav>
   <main
-    class="sc-bdvvaa ghcGOY"
+    class="sc-hKwCoD Wbdxu"
   >
     <h1
-      class="sc-gsDJrp"
+      class="sc-eCImvq"
     >
       CSV Uploader
     </h1>
     <section
-      class="sc-dkPtyc gtoKWL"
+      class="sc-jRQAMF gwajd"
     >
       <label
-        class="sc-iCfLBT iRFvGT"
+        class="sc-jrQzUz eTpbLd"
       >
         <p>
           select a csv file:
         </p>
         <input
           accept=".csv"
-          class="sc-hKwCoD kVCDjn"
+          class="sc-gKckTs ebOPog"
           id="file-input"
           type="file"
         />
         <div
-          class="sc-furvIG ikamwt"
+          class="sc-kDThTU gqidNe"
         >
           <svg>
             csv-file.svg
@@ -35,24 +50,27 @@ exports[`renders app without crashing 1`] = `
         <strong />
       </label>
       <label
-        class="sc-eCImvq bWMDWn"
+        class="sc-iCfLBT dxxwFI"
         for="provider-text"
       >
         Provider:
       </label>
       <input
-        class="sc-jRQAMF erOQLW"
+        class="sc-furvIG jKezbk"
         id="provider-text"
         type="text"
         value=""
       />
       <button
-        class="sc-gKckTs hrWobv"
+        class="sc-pVTma cWIChi"
         disabled=""
       >
         upload file
       </button>
     </section>
   </main>
+  <div
+    class="Toastify"
+  />
 </div>
 `;
