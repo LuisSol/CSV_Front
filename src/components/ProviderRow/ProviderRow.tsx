@@ -1,4 +1,5 @@
 import React, { FC } from "react";
+import { useHistory } from "react-router-dom";
 
 // styles
 import { Container } from "./ProciderRow.styled";
@@ -10,9 +11,11 @@ interface ProviderRowProps {
 }
 
 const ProviderRow: FC<ProviderRowProps> = ({ name, vehicles, id }) => {
+  const history = useHistory();
+
   const handleClick = (id: string) => (e: React.MouseEvent<HTMLDivElement>) => {
     e.preventDefault();
-    console.log(id);
+    history.push(`/providers/${name}?id=${id}`);
   };
 
   return (
